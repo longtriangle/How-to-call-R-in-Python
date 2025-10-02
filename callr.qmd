@@ -1,0 +1,62 @@
+---
+title: "How to Call R in Python"
+author: "Wilson Tang"
+format:
+  revealjs:
+    theme: solarized
+    transition: fade
+    slide-number: true
+---
+
+## Slide 1: Why we want R 
+
+- Statistical functions and hypothesis testing can easily be done with built-in
+functions
+- Exploratory data analysis is more natural with tidyverse
+- Data visualization ggplot2 is better than plotnine
+
+---
+
+## Slide 2: Why we want Python
+
+- Data processing is more efficient with pandas; bigger data with Dask or
+PySpark
+- Automate daily and repetitive tasks with scripts and pipelines
+- Preferred for machine learning and AI. Packages like scikit-learn for machine
+learning, and PyTorch or TensorFlow for deep learning/ neural networks
+
+---
+
+## Slide 3: Example workflow
+
+<div style="font-size: 20px;">
+Raw data 
+
+    |
+    ▼ 
+
+Python: Data reading, cleaning and preprocessing
+
+
+    |
+    ▼ 
+
+R: Exploratory data analysis to know our data better
+
+    |
+    ▼ 
+
+Python: Feature engineer based on what know about our data and what we need
+
+    |
+    ▼ 
+
+R: Statistical analysis and visualization
+
+    |
+    ▼ 
+
+Python: Machine learning and deployment
+</div>
+
+---
