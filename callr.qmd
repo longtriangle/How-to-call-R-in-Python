@@ -60,3 +60,40 @@ Python: Machine learning and deployment
 </div>
 
 ---
+
+## Slide 4: Data reading, cleaning and preprocessing
+
+```python
+import pandas as pd
+import numpy as np
+
+file_path = '../ids-f25/data/nyc_crashes_lbdwk_2025.csv'
+
+df = pd.read_csv(file_path,
+                 dtype={'LATITUDE': np.float32,
+                        'LONGITUDE': np.float32,
+                        'ZIP CODE': str})
+
+# column name cleaning
+df.columns = df.columns.str.lower().str.replace(' ', '_')
+
+# remove September 7th
+df = df[df["crash_date"] != "09/07/2025"].copy()
+
+# handling missing values
+df.loc[(df['latitude'] == 0) | (df['latitude'].isna()), 'latitude'] = pd.NA
+df.loc[(df['longitude'] == 0) | (df['longitude'].isna()), 'longitude'] = pd.NA
+
+# just read the feather file for simplicity
+df = pd.read_feather("../ids-f25/data/nyc_crashes_cleaned.feather")
+```
+
+```{python}
+import pandas as pd
+import numpy as np
+
+df = pd.read_feather("../ids-f25/data/nyc_crashes_cleaned.feather")
+```
+
+---
+
